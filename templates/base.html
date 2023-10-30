@@ -153,6 +153,16 @@
 
     {% block content %} {% endblock %}
 {% include 'includes/footer.html'%}
+    <!-- Full Page Search -->
+<div id="full-page-search">
+    <button type="button" class="close">×</button>
+    <div class="full-page-search-box">
+        <form action="https://storage.googleapis.com/theme-vessel-items/checking-sites/cmart-2-html/HTML/main/index.html#" class="search-boxs">
+            <input class="search" type="search" value="" placeholder="type keyword(s) here"/>
+            <button type="submit" class="btn btn-sm button-theme">Search</button>
+        </form>
+    </div>
+</div>
 
     <script src="{% static 'js/jquery.min.js' %}"></script>
     <script src="{% static 'js/popper.min.js' %}"></script>
