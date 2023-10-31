@@ -788,7 +788,7 @@
     <div class="container">
         <!-- Main title -->
         <div class="main-title">
-            <h1 class="mb-10">Our Agent</h1>
+            <h1 class="mb-10">Our Team</h1>
             <div class="title-border">
                 <div class="title-border-inner"></div>
                 <div class="title-border-inner"></div>
@@ -798,94 +798,30 @@
             </div>
         </div>
         <div class="row">
+            {% for team in teams %}
             <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
                 <div class="team-3">
                     <div class="thumb">
-                        <img src="img/avatar/avatar-9.jpg" alt="agent" class="img-fluid">
+                        <img src="{{team.photo.url}}" alt="agent" class="img-fluid">
                         <ul>
                             <li>
-                                <a href="#" class="facebook-bg"><i class="fa fa-facebook"></i></a>
+                                <a href="{{team.facebook_link}}" class="facebook-bg"><i class="fa fa-facebook"></i></a>
                             </li>
                             <li>
-                                <a href="#" class="twitter-bg"><i class="fa fa-twitter"></i></a>
+                                <a href="{{team.twitter_link}}" class="twitter-bg"><i class="fa fa-twitter"></i></a>
                             </li>
                             <li>
-                                <a href="#" class="google-bg"><i class="fa fa-google"></i></a>
+                                <a href="{{team.google_plus_link}}" class="google-bg"><i class="fa fa-google"></i></a>
                             </li>
                         </ul>
                     </div>
                     <div class="info">
-                        <h5><a href="agent.html">Michelle Nelson</a></h5>
-                        <p>Support Manager</p>
+                        <h5><a href="agent.html">{{team.first_name}} {{team.last_name}}</a></h5>
+                        <p>{{team.designation}}</p>
                     </div>
                 </div>
             </div>
-            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
-                <div class="team-3">
-                    <div class="thumb">
-                        <img src="img/avatar/avatar-10.jpg" alt="agent" class="img-fluid">
-                        <ul>
-                            <li>
-                                <a href="#" class="facebook-bg"><i class="fa fa-facebook"></i></a>
-                            </li>
-                            <li>
-                                <a href="#" class="twitter-bg"><i class="fa fa-twitter"></i></a>
-                            </li>
-                            <li>
-                                <a href="#" class="google-bg"><i class="fa fa-google"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="info">
-                        <h5><a href="agent.html">Martin Smith</a></h5>
-                        <p>Web Developer</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
-                <div class="team-3">
-                    <div class="thumb">
-                        <img src="img/avatar/avatar-11.jpg" alt="agent" class="img-fluid">
-                        <ul>
-                            <li>
-                                <a href="#" class="facebook-bg"><i class="fa fa-facebook"></i></a>
-                            </li>
-                            <li>
-                                <a href="#" class="twitter-bg"><i class="fa fa-twitter"></i></a>
-                            </li>
-                            <li>
-                                <a href="#" class="google-bg"><i class="fa fa-google"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="info">
-                        <h5><a href="agent.html">Carolyn Stone</a></h5>
-                        <p>Creative Director</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
-                <div class="team-3">
-                    <div class="thumb">
-                        <img src="img/avatar/avatar-12.jpg" alt="agent" class="img-fluid">
-                        <ul>
-                            <li>
-                                <a href="#" class="facebook-bg"><i class="fa fa-facebook"></i></a>
-                            </li>
-                            <li>
-                                <a href="#" class="twitter-bg"><i class="fa fa-twitter"></i></a>
-                            </li>
-                            <li>
-                                <a href="#" class="google-bg"><i class="fa fa-google"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="info">
-                        <h5><a href="agent.html">Brandon Miller</a></h5>
-                        <p>Manager</p>
-                    </div>
-                </div>
-            </div>
+            {% endfor %}
         </div>
     </div>
 </div>
