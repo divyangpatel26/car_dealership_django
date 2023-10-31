@@ -26,6 +26,15 @@
                 <a class="nav-link" href="{% url 'home' %}">Home</a>
               </li>
                 <li
+                      {% if '/cars' == request.path %}
+                    class="nav-item active"
+                    {% else %}
+                    class="nav-item"
+                    {% endif %}
+                      >
+                <a class="nav-link" href="{% url 'cars' %}">Cars</a>
+              </li>
+                <li
                       {% if '/about' == request.path %}
                     class="nav-item active"
                     {% else %}
