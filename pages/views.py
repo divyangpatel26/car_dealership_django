@@ -1,12 +1,15 @@
 from django.shortcuts import render
 from .models import *
+from cars.models import *
 
 
 # Create your views here.
 def home(request):
     teams = Team.objects.all()
+    featured_cars = Car.objects.order_by('-created_date').filter(is_featured=True)
     data = {
-        'teams': teams
+        'teams': teams,
+        'featured_cars': featured_cars,
     }
     return render(request, 'pages/home.html', data)
 
@@ -14,9 +17,9 @@ def home(request):
 def about(request):
     teams = Team.objects.all()
     data = {
-        'teams':teams
+        'teams': teams
     }
-    return render(request, 'pages/about.html',data)
+    return render(request, 'pages/about.html', data)
 
 
 def services(request):
