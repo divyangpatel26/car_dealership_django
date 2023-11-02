@@ -1,5 +1,6 @@
 {% extends 'base.html'%}
 {% block content %}
+{% load humanize %}
 {% load static %}
 <!-- Banner start -->
 <div class="banner" id="banner">
@@ -149,7 +150,7 @@
                     <div class="car-thumbnail">
                         <a href="car-details.html" class="car-img">
                             <div class="tag-2 bg-active">Featured</div>
-                            <div class="price-box-2"><sup>$</sup>{{featured_cars.price}}<span>/month</span> </div>
+                            <div class="price-box-2"><sup>$</sup>{{featured_cars.price | intcomma}}</div>
                             <img class="d-block w-100" src="{{featured_cars.car_photo.url}}" style="min-height:262px; max-height:262px;" alt="car">
                         </a>
                         <div class="carbox-overlap-wrapper">
@@ -197,7 +198,7 @@
                         </div>
                         <ul class="facilities-list clearfix">
                             <li>
-                                <i class="flaticon-way"></i>{{featured_cars.miles}} km
+                                <i class="flaticon-way"></i>{{featured_cars.miles | intcomma}} km
                             </li>
                             <li>
                                 <i class="flaticon-manual-transmission"></i> {{featured_cars.transmission}}
@@ -329,7 +330,7 @@
                                     <h3>
                                         <a href="car-details.html">{{cars.car_title}}</a>
                                     </h3>
-                                    <h5>${{cars.price}}</h5>
+                                    <h5>${{cars.price | intcomma}}</h5>
                                 </div>
                             </div>
                         </div>
