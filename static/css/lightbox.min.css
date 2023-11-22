@@ -24,8 +24,9 @@
 
 .lg-actions .lg-next, .lg-actions .lg-prev {
     background-color: rgba(0, 0, 0, .45);
+    background: #fff;
     border-radius: 2px;
-    color: #999;
+    color: #000;
     cursor: pointer;
     display: block;
     font-size: 22px;
@@ -44,7 +45,7 @@
 }
 
 .lg-actions .lg-next:hover, .lg-actions .lg-prev:hover {
-    color: #FFF
+    color: #000;
 }
 
 .lg-actions .lg-next {
@@ -200,13 +201,17 @@
 
 .lg-sub-html h4 {
     margin: 0;
-    font-size: 13px;
-    font-weight: 700
+    font-size: 18px;
+    color: #fff;
+    font-weight: 400;
+    opacity: 0.9;
 }
 
 .lg-sub-html p {
-    font-size: 12px;
-    margin: 5px 0 0
+    font-size: 14px;
+    margin: 5px 0 0;
+    color: #fff;
+    opacity: 0.9;
 }
 
 #lg-counter {
@@ -284,7 +289,8 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
     cursor: -moz-grab;
     cursor: -o-grab;
     cursor: -ms-grab;
-    cursor: grab
+    cursor: grab;
+    width: 80px!important;
 }
 
 .lg-outer .lg-thumb-outer.lg-grabbing .lg-thumb-item {
@@ -308,10 +314,9 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 
 .lg-outer .lg-thumb {
     padding: 10px 0;
-    height: 100%;
     margin-bottom: -5px;
-    margin:0 auto;
-    max-width: 600px;
+    max-width: 430px;
+    margin: 0 auto;
 }
 
 .lg-outer .lg-thumb-item {
@@ -319,10 +324,10 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
     float: left;
     overflow: hidden;
     height: 100%;
-    width: 20%;
     border: 2px solid #FFF;
+    border: 2px solid #000;
     border-radius: 0;
-    margin:0 2.5px 5px!important;
+    margin-bottom: 5px
 }
 
 @media (min-width: 1025px) {
@@ -334,7 +339,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 }
 
 .lg-outer .lg-thumb-item.active, .lg-outer .lg-thumb-item:hover {
-    border-color: #a90707
+    border-color: #fff;
 }
 
 .lg-outer .lg-thumb-item img {
@@ -1067,18 +1072,4 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
     -moz-transition: left 1s cubic-bezier(0, 0, .25, 1) 0s, opacity .1s ease 0s;
     -o-transition: left 1s cubic-bezier(0, 0, .25, 1) 0s, opacity .1s ease 0s;
     transition: left 1s cubic-bezier(0, 0, .25, 1) 0s, opacity .1s ease 0s
-}
-
-
-@media (max-width: 992px) {
-    .lg-outer .lg-thumb-item{
-        width: 60px!important;
-        height: 40px!important;
-    }
-
-    .lg-outer .lg-thumb {
-        padding: 10px 5px;
-        margin: 0 auto;
-        max-width: 335px;
-    }
 }

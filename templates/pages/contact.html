@@ -1,7 +1,10 @@
 {% extends 'base.html' %}
+
+{% block title %} | Contact Us {% endblock %}
 {% block content %}
+
 <!-- Sub banner start -->
-<div class="sub-banner">
+<div class="sub-banner overview-bgi">
     <div class="container breadcrumb-area">
         <div class="breadcrumb-areas">
             <h1>Contact Us</h1>
@@ -14,151 +17,97 @@
 </div>
 <!-- Sub Banner end -->
 
-<!-- Contact 1 start -->
-<div class="contact-1 content-area-5">
+<!-- Contact 2 start -->
+<div class="contact-2 content-area-5">
     <div class="container">
         <!-- Main title -->
         <div class="main-title text-center">
-            <h1 class="mb-10">Get In Touch</h1>
-            <div class="title-border">
-                <div class="title-border-inner"></div>
-                <div class="title-border-inner"></div>
-                <div class="title-border-inner"></div>
-                <div class="title-border-inner"></div>
-                <div class="title-border-inner"></div>
-            </div>
+            <h1>Contact <span>Us</span></h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
         </div>
-        <div class="bg-white">
-            <div class="row g-0">
-                <div class="col-lg-7 col-md-12 col-sm-12 col-pad2">
-                    <!-- Contact form start -->
-                    <div class="contact-form contact-pad">
-                        <h3>Send us a Message</h3>
-                        <form id="contact_form" action="https://storage.googleapis.com/theme-vessel-items/checking-sites/cmart-2-html/HTML/main/index.html" method="GET" enctype="multipart/form-data">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group name">
-                                        <input type="text" name="name" class="form-control" placeholder="Name" aria-label="Full Name">
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group email">
-                                        <input type="email" name="email" class="form-control" placeholder="Email Address" aria-label="Email Address">
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group subject">
-                                        <input type="text" name="subject" class="form-control" placeholder="Subject" aria-label="Subject">
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group number">
-                                        <input type="text" name="phone" class="form-control" placeholder="Phone" aria-label="Phone Number">
-                                    </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="form-group message">
-                                        <textarea  class="form-control" name="message" placeholder="Write message" aria-label="Write message"></textarea>
-                                    </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="send-btn text-center">
-                                        <button type="submit" class="btn-6">Send Message</button>
-                                    </div>
-                                </div>
+        <form action="{% url 'contact' %}" method="POST" enctype="multipart/form-data">
+          {% include 'includes/messages.html' %}
+          {% csrf_token %}
+            <div class="row">
+                <div class="col-lg-7">
+                    <div class="row">
+                        <div class="col-md-6 text-left">
+                            <div class="form-group name">
+                                <input type="text" name="name" class="form-control" placeholder="Full Name" required>
                             </div>
-                        </form>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group email">
+                                <input type="email" name="email" class="form-control" placeholder="Email" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group subject">
+                                <input type="text" name="subject" class="form-control" placeholder="Subject" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group number">
+                                <input type="text" name="phone" class="form-control" placeholder="Number">
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group message">
+                                <textarea class="form-control" name="message" placeholder="Write message"></textarea>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="send-btn text-center">
+                                <button type="submit" class="btn btn-md button-theme">Send Message</button>
+                            </div>
+                        </div>
                     </div>
-                    <!-- Contact form end -->
                 </div>
-                <div class="col-lg-5 col-md-12 col-sm-12 col-pad2">
-                    <!-- Contact details start -->
-                    <div class="contact-details">
-                        <h3>Opening Hours</h3>
-                        <div class="ci-box d-flex">
+                <div class="col-lg-5">
+                    <div class="contact-info-2">
+                        <div class="ci-box">
                             <div class="icon">
-                                <i class="fa fa-map-marker"></i>
+                                <i class="flaticon-phone"></i>
                             </div>
-                            <div class="detail align-self-center">
-                                <h4>Office Address</h4>
-                                <p>20/F Green Road, Dhanmondi, Dhaka</p>
+                            <div class="detail">
+                                <h5>Phone:</h5>
+                                <p><a href="#">+1 8556 552</a></p>
                             </div>
                         </div>
-                        <div class="ci-box d-flex">
+                        <div class="ci-box">
                             <div class="icon">
-                                <i class="fa fa-phone"></i>
+                                <i class="flaticon-mail"></i>
                             </div>
-                            <div class="detail align-self-center">
-                                <h4>Phone Number</h4>
-                                <p>
-                                    <a href="tel:0477-0477-8556-552">Office: 0477 8556 552</a>
-                                </p>
+                            <div class="detail">
+                                <h5>Email:</h5>
+                                <p><a href="#">info@cazone.com</a></p>
                             </div>
                         </div>
-                        <div class="ci-box d-flex">
+                        <div class="ci-box">
                             <div class="icon">
-                                <i class="fa fa-envelope"></i>
+                                <i class="flaticon-earth"></i>
                             </div>
-                            <div class="detail align-self-center">
-                                <h4>Email Address</h4>
-                                <p>
-                                    <a href="mailto:info@themevessel.com">info@themevessel.com</a>
-                                </p>
+                            <div class="detail">
+                                <h5>Web:</h5>
+                                <p><a href="#">info@cazone.com</a></p>
                             </div>
                         </div>
-                        <div class="ci-box d-flex mb-40">
+                        <div class="ci-box mb-0">
                             <div class="icon">
-                                <i class="fa fa-fax"></i>
+                                <i class="flaticon-fax"></i>
                             </div>
-                            <div class="detail align-self-center">
-                                <h4>Fax:</h4>
-                                <p>
-                                    <a href="tel:0477-0477-8556-552">0477 8556 552</a>
-                                </p>
+                            <div class="detail">
+                                <h5>Fax:</h5>
+                                <p><a href="#">+1 85X6 552</a></p>
                             </div>
                         </div>
-                        <h3>Follow Us</h3>
-                        <ul class="social-list clearfix">
-                            <li>
-                                <a href="#" class="facebook-bg">
-                                    <i class="fa fa-facebook"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="twitter-bg">
-                                    <i class="fa fa-twitter"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="linkedin-bg">
-                                    <i class="fa fa-linkedin"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="google-bg">
-                                    <i class="fa fa-google-plus"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="rss-bg">
-                                    <i class="fa fa-rss"></i>
-                                </a>
-                            </li>
-                        </ul>
                     </div>
-                    <!-- Contact details end -->
                 </div>
             </div>
-        </div>
+        </form>
     </div>
 </div>
-<!-- Contact 1 end -->
+<!-- Contact 2 end -->
 
-<!-- Google map start -->
-<div class="section">
-    <div class="map">
-        <div id="map" class="contact-map"></div>
-    </div>
-</div>
-<!-- Google map end -->
+
 {% endblock %}

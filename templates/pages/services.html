@@ -1,12 +1,15 @@
 {% extends 'base.html' %}
+
+{% block title %} | Services {% endblock %}
 {% block content %}
+
 <!-- Sub banner start -->
-<div class="sub-banner">
+<div class="sub-banner overview-bgi">
     <div class="container breadcrumb-area">
         <div class="breadcrumb-areas">
             <h1>Services</h1>
             <ul class="breadcrumbs">
-                <li><a href="{% url 'home'%}">Home</a></li>
+                <li><a href="{% url 'home' %}">Home</a></li>
                 <li class="active">Services</li>
             </ul>
         </div>
@@ -19,117 +22,115 @@
     <div class="container">
         <!-- Main title -->
         <div class="main-title text-center">
-            <h1 class="mb-10">Our Services</h1>
-            <div class="title-border mb-30">
-                <div class="title-border-inner"></div>
-                <div class="title-border-inner"></div>
-                <div class="title-border-inner"></div>
-                <div class="title-border-inner"></div>
-                <div class="title-border-inner"></div>
-            </div>
+            <h1>Our <span>Services</span></h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
         </div>
         <div class="row">
-            <div class="col-lg-4 col-md-6 col-sm-12">
-                <div class="advantages-4">
-                    <div class="advantages-4-inner">
-                        <div class="icon flaticon-console">
-                            <i class="flaticon-speed"></i>
-                        </div>
-                        <div class="detail">
-                            <h4><a href="services.html">Super Fast</a></h4>
-                            <p>Sigh sang nay sex high yet door game. She dissimilar was favourable unreservednay ex pression contrasted saw.</p>
-                        </div>
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="service-info">
+                    <div class="number">1</div>
+                    <div class="icon">
+                        <i class="flaticon-support-2"></i>
+                    </div>
+                    <div class="detail">
+                        <h3>Free Support</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt</p>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 col-sm-12">
-                <div class="advantages-4">
-                    <div class="advantages-4-inner">
-                        <div class="icon flaticon-console">
-                            <i class="flaticon-wheel"></i>
-                        </div>
-                        <div class="detail">
-                            <h4><a href="services.html">Oil Change</a></h4>
-                            <p>Sigh sang nay sex high yet door game. She dissimilar was favourable unreservednay ex pression contrasted saw.</p>
-                        </div>
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="service-info">
+                    <div class="number">2</div>
+                    <div class="icon">
+                        <i class="flaticon-speed"></i>
+                    </div>
+                    <div class="detail">
+                        <h3>Super Fast</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt</p>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 col-sm-12">
-                <div class="advantages-4">
-                    <div class="advantages-4-inner">
-                        <div class="icon flaticon-console">
-                            <i class="flaticon-air-conditioner"></i>
-                        </div>
-                        <div class="detail">
-                            <h4><a href="services.html">AIR conditioning</a></h4>
-                            <p>Sigh sang nay sex high yet door game. She dissimilar was favourable unreservednay ex pression contrasted saw.</p>
-                        </div>
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="service-info">
+                    <div class="number">3</div>
+                    <div class="icon">
+                        <i class="flaticon-motor"></i>
+                    </div>
+                    <div class="detail">
+                        <h3>Repairing</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt</p>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 col-sm-12">
-                <div class="advantages-4">
-                    <div class="advantages-4-inner">
-                        <div class="icon flaticon-console">
-                            <i class="flaticon-car-2"></i>
-                        </div>
-                        <div class="detail">
-                            <h4><a href="services.html">Dealership</a></h4>
-                            <p>Sigh sang nay sex high yet door game. She dissimilar was favourable unreservednay ex pression contrasted saw.</p>
-                        </div>
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="service-info">
+                    <div class="number">4</div>
+                    <div class="icon">
+                        <i class="flaticon-air-conditioner"></i>
+                    </div>
+                    <div class="detail">
+                        <h3>AIR conditioning</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt</p>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 col-sm-12">
-                <div class="advantages-4">
-                    <div class="advantages-4-inner">
-                        <div class="icon flaticon-console">
-                            <i class="flaticon-motor"></i>
-                        </div>
-                        <div class="detail">
-                            <h4><a href="services.html">Repairing</a></h4>
-                            <p>Sigh sang nay sex high yet door game. She dissimilar was favourable unreservednay ex pression contrasted saw.</p>
-                        </div>
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="service-info">
+                    <div class="number">5</div>
+                    <div class="icon">
+                        <i class="flaticon-fuel"></i>
+                    </div>
+                    <div class="detail">
+                        <h3>Oil Change</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt</p>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 col-sm-12">
-                <div class="advantages-4">
-                    <div class="advantages-4-inner">
-                        <div class="icon flaticon-console">
-                            <i class="flaticon-deal"></i>
-                        </div>
-                        <div class="detail">
-                            <h4><a href="services.html">Trusted Agents</a></h4>
-                            <p>Sigh sang nay sex high yet door game. She dissimilar was favourable unreservednay ex pression contrasted saw.</p>
-                        </div>
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="service-info">
+                    <div class="number">7</div>
+                    <div class="icon">
+                        <i class="flaticon-wheel"></i>
+                    </div>
+                    <div class="detail">
+                        <h3>Engine Repair</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt</p>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 col-sm-12">
-                <div class="advantages-4">
-                    <div class="advantages-4-inner">
-                        <div class="icon flaticon-console">
-                            <i class="flaticon-lock"></i>
-                        </div>
-                        <div class="detail">
-                            <h4><a href="services.html">Security</a></h4>
-                            <p>Sigh sang nay sex high yet door game. She dissimilar was favourable unreservednay ex pression contrasted saw.</p>
-                        </div>
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="service-info">
+                    <div class="number">6</div>
+                    <div class="icon">
+                        <i class="flaticon-car-2"></i>
+                    </div>
+                    <div class="detail">
+                        <h3>Dealership</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt</p>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 col-sm-12">
-                <div class="advantages-4">
-                    <div class="advantages-4-inner">
-                        <div class="icon flaticon-console">
-                            <i class="flaticon-support-2"></i>
-                        </div>
-                        <div class="detail">
-                            <h4><a href="services.html">Free Support</a></h4>
-                            <p>Sigh sang nay sex high yet door game. She dissimilar was favourable unreservednay ex pression contrasted saw.</p>
-                        </div>
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="service-info">
+                    <div class="number">8</div>
+                    <div class="icon">
+                        <i class="flaticon-lock"></i>
+                    </div>
+                    <div class="detail">
+                        <h3>Security</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="service-info">
+                    <div class="number">9</div>
+                    <div class="icon">
+                        <i class="flaticon-deal"></i>
+                    </div>
+                    <div class="detail">
+                        <h3>Trusted Agents</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt</p>
                     </div>
                 </div>
             </div>
@@ -138,243 +139,27 @@
 </div>
 <!-- Services end -->
 
-<!-- Counters strat -->
-<div class="counters">
+
+
+<!-- Service center strat -->
+<div class="service-center content-area-5">
     <div class="container">
         <div class="row">
-            <div class="col-lg-3 col-md-3 col-sm-6">
-                <div class="counter-box">
-                    <i class="flaticon-car"></i>
-                    <h1 class="counter">967</h1>
-                    <h5>Total Cars</h5>
+            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12">
+                <div class="inside-car service-car">
+                    <iframe src="https://www.youtube.com/embed/5e0LxrLSzok" allowfullscreen=""></iframe>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-3 col-sm-6">
-                <div class="counter-box">
-                    <i class="flaticon-blog"></i>
-                    <h1 class="counter">1276</h1>
-                    <h5>Dealer Reviews</h5>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-3 col-sm-6">
-                <div class="counter-box">
-                    <i class="flaticon-user"></i>
-                    <h1 class="counter">396</h1>
-                    <h5>Happy Clients</h5>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-3 col-sm-6">
-                <div class="counter-box">
-                    <i class="flaticon-medal"></i>
-                    <h1 class="counter">177</h1>
-                    <h5>Awards</h5>
+            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12">
+                <div class="about-text">
+                    <h3>Our Services <span>Video</span></h3>
+                    <p>One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could</p>
+                    <p class="mb-0">morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see himself transformed in his bed</p>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<!-- Counters end -->
+<!-- Service center end -->
 
-<!-- Pricing tables start -->
-<div class="pricing-tables content-area">
-    <div class="container">
-        <!-- Main title -->
-        <div class="main-title text-center">
-            <h1 class="mb-10">Pricing Tables</h1>
-            <div class="title-border mb-30">
-                <div class="title-border-inner"></div>
-                <div class="title-border-inner"></div>
-                <div class="title-border-inner"></div>
-                <div class="title-border-inner"></div>
-                <div class="title-border-inner"></div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xl-4 col-lg-4 col-md-12">
-                <div class="pricing-1 plan">
-                    <div class="plan-header">
-                        <h5>Ultimate Plan</h5>
-                        <p>Plan short description</p>
-                        <div class="plan-price"><sup>$</sup>80<span>/month</span> </div>
-                    </div>
-                    <div class="plan-list">
-                        <ul>
-                            <li><i class="fa fa-globe"></i>Unlimited Websites</li>
-                            <li><i class="fa fa-thumbs-up"></i>Unlimited Storage</li>
-                            <li><i class="fa fa-signal"></i>Unlimited Bandwidth</li>
-                            <li><i class="fa fa-user"></i>1000 Email Addresses</li>
-                            <li><i class="fa fa-star"></i>Free domain with annual plan</li>
-                            <li><i class="fa fa-rocket"></i>4X Processing Power</li>
-                            <li><i class="fa fa-server"></i>Premium DNS</li>
-                        </ul>
-                        <div class="plan-button text-center">
-                            <a href="#" class="btn pricing-btn">Get Started</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-4 col-lg-4 col-md-12">
-                <div class="pricing-1 plan">
-                    <div class="plan-header">
-                        <h5>Deluxe Plan</h5>
-                        <p>Plan short description</p>
-                        <div class="plan-price"><sup>$</sup>80<span>/month</span> </div>
-                    </div>
-                    <div class="plan-list">
-                        <ul>
-                            <li><i class="fa fa-globe"></i>Unlimited Websites</li>
-                            <li><i class="fa fa-thumbs-up"></i>Unlimited Storage</li>
-                            <li><i class="fa fa-signal"></i>Unlimited Bandwidth</li>
-                            <li><i class="fa fa-user"></i>1000 Email Addresses</li>
-                            <li><i class="fa fa-star"></i>Free domain with annual plan</li>
-                            <li><i class="fa fa-rocket"></i>4X Processing Power</li>
-                            <li><i class="fa fa-server"></i>Premium DNS</li>
-                        </ul>
-                        <div class="plan-button text-center">
-                            <a href="#" class="btn pricing-btn">Get Started</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-4 col-lg-4 col-md-12">
-                <div class="pricing-1 plan">
-                    <div class="plan-header">
-                        <h5>Professional Plan</h5>
-                        <p>Plan short description</p>
-                        <div class="plan-price"><sup>$</sup>80<span>/month</span> </div>
-                    </div>
-                    <div class="plan-list">
-                        <ul>
-                            <li><i class="fa fa-globe"></i>Unlimited Websites</li>
-                            <li><i class="fa fa-thumbs-up"></i>Unlimited Storage</li>
-                            <li><i class="fa fa-signal"></i>Unlimited Bandwidth</li>
-                            <li><i class="fa fa-user"></i>1000 Email Addresses</li>
-                            <li><i class="fa fa-star"></i>Free domain with annual plan</li>
-                            <li><i class="fa fa-rocket"></i>4X Processing Power</li>
-                            <li><i class="fa fa-server"></i>Premium DNS</li>
-                        </ul>
-                        <div class="plan-button text-center">
-                            <a href="#" class="btn pricing-btn">Get Started</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Pricing tables end -->
-
-<!-- Testimonial start -->
-<div class="testimonial content-area-5 testimonial-bg">
-    <div class="container">
-        <!-- Main title -->
-        <div class="main-title text-center">
-            <h1 class="mb-10">Our Testimonial</h1>
-            <div class="title-border mb-30">
-                <div class="title-border-inner"></div>
-                <div class="title-border-inner"></div>
-                <div class="title-border-inner"></div>
-                <div class="title-border-inner"></div>
-                <div class="title-border-inner"></div>
-            </div>
-        </div>
-        <!-- Slick slider area start -->
-        <div class="slick-slider-area">
-            <div class="row slick-carousel" data-slick='{"slidesToShow": 2, "responsive":[{"breakpoint": 1024,"settings":{"slidesToShow": 1}}, {"breakpoint": 768,"settings":{"slidesToShow": 1}}]}'>
-                <div class="slick-slide-item">
-                    <div class="testimonials-inner">
-                        <div class="user">
-                            <a href="#">
-                                <img class="media-object" src="img/avatar/avatar-2.jpg" alt="user">
-                            </a>
-                        </div>
-                        <div class="testimonial-info">
-                            <h3>
-                                Creative Director, india
-                            </h3>
-                            <p>Office Manager</p>
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text everLorem industry's standard dummy text everLorem.</p>
-                            <div class="rating">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star-half-full"></i>
-                                <span>Reting</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="slick-slide-item">
-                    <div class="testimonials-inner">
-                        <div class="user">
-                            <a href="#">
-                                <img class="media-object" src="img/avatar/avatar-1.jpg" alt="user">
-                            </a>
-                        </div>
-                        <div class="testimonial-info">
-                            <h3>
-                                Pitarshon Roky
-                            </h3>
-                            <p>Web Designer, Uk</p>
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text everLorem industry's standard dummy text everLorem.</p>
-                            <div class="rating">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star-half-full"></i>
-                                <span>Reting</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="slick-slide-item">
-                    <div class="testimonials-inner">
-                        <div class="user">
-                            <a href="#">
-                                <img class="media-object" src="img/avatar/avatar-3.jpg" alt="user">
-                            </a>
-                        </div>
-                        <div class="testimonial-info">
-                            <h3>
-                                Maikel Alisa
-                            </h3>
-                            <p>Creative Director</p>
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text everLorem industry's standard dummy text everLorem.</p>
-                            <div class="rating">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star-half-full"></i>
-                                <span>Reting</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Testimonial end -->
-
-<!-- Intro section start -->
-<div class="intro-section">
-    <div class="intro-section-inner">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-9 col-md-8 col-sm-12">
-                    <div class="intro-text">
-                        <h3>Do You Have Questions ?</h3>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-12">
-                    <a href="contact.html" class="btn btn-md">Get in Touch</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Intro section end -->
-{% endblock%}
+{% endblock %}

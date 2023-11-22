@@ -1,187 +1,261 @@
-{% extends 'base.html'%}
+{% extends 'base.html' %}
+
+{% block title %} | Home {% endblock %}
 {% block content %}
+
 {% load humanize %}
 {% load static %}
 <!-- Banner start -->
+
 <div class="banner" id="banner">
-    <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
-        <div class="carousel-inner banner-slider-inner">
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner banner-slider-inner text-center">
             <div class="carousel-item banner-max-height active item-bg">
-                <img class="d-block w-100 h-100" src="{% static 'img/banner/img-3.jpg' %}" alt="banner">
-                <div class="carousel-content banner-info-2 bi-2">
-                    <h1>Welcome to Car Cmart</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
-                    <a href="#" class="btn-6">Get Started Now</a>
+                <img class="d-block w-100 h-100" src="{% static 'img/car-1.jpg' %}" alt="banner">
+                <div class="carousel-content container banner-info-2 bi-2 text-left">
+                
+                    <h3>Wow Factor Standard</h3>
+                    <h5>Allow us to guide you through the innovative stress<br>
+                        free approach in finding your dream car.</h5>
+                    <a href="{% url 'services' %}" class="btn btn-lg btn-theme">Read more</a>
                 </div>
             </div>
             <div class="carousel-item banner-max-height item-bg">
-                <img class="d-block w-100 h-100" src="{% static 'img/banner/img-5.jpg' %}" alt="banner">
-                <div class="carousel-content banner-info-2 bi-2">
-                    <h1>Find your Dream Car</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
-                    <a href="#" class="btn-6">Get Started Now</a>
+                <img class="d-block w-100 h-100" src="{% static 'img/car-2.jpg' %}" alt="banner">
+                <div class="carousel-content container banner-info-2 bi-2 text-left">
+                    <h3>Explore Your Dream Car</h3>
+                    <h5>Allow us to guide you through the innovative stress<br>
+                        free approach in finding your dream car.</h5>
+                    <a href="{% url 'services' %}" class="btn btn-lg btn-theme">Read more</a>
                 </div>
             </div>
             <div class="carousel-item banner-max-height item-bg">
-                <img class="d-block w-100 h-100" src="{% static 'img/banner/img-6.jpg' %}" alt="banner">
-                <div class="carousel-content banner-info-2 bi-2">
-                    <h1>Best place for sell car!</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
-                    <a href="#" class="btn-6">Get Started Now</a>
+                <img class="d-block w-100 h-100" src="{% static 'img/car-3.jpg' %}" alt="banner">
+                <div class="carousel-content container banner-info-2 bi-2 text-left">
+                    <h3>We Are Wheel</h3>
+                    <h5>Allow us to guide you through the innovative stress<br>
+                        free approach in finding your dream car.</h5>
+                    <a href="{% url 'services' %}" class="btn btn-lg btn-theme">Read more</a>
                 </div>
             </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
+        <!-- Search box 3 start -->
+        <div class="search-box-4 sb-8">
+            <form action="{% url 'search' %}" method="">
+                <div class="form-group">
+                    <input type="text" name="keyword" placeholder="Search by name" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <select class="form-control search-fields" name="model">
+                        <option selected="true" disabled="disabled">Model</option>
+                        {% for model in model_search %}
+                          <option value="{{model}}">{{model}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="form-group">
+                    <select class="form-control search-fields" name="city">
+                        <option selected="true" disabled="disabled">Location</option>
+                        {% for city in city_search %}
+                          <option value="{{city}}">{{city}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="form-group">
+                    <select class="form-control search-fields" name="year">
+                        <option selected="true" disabled="disabled">Year</option>
+                        {% for year in year_search %}
+                          <option value="{{year}}">{{year}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="form-group">
+                    <select class="form-control search-fields" name="body_style">
+                        <option selected="true" disabled="disabled">Select Type Of Car</option>
+                        {% for body_style in body_style_search %}
+                          <option value="{{body_style}}">{{body_style}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="range-slider clearfix">
+                                <label>Price</label>
+                                <div data-min="0" data-max="150000"  data-min-name="min_price" data-max-name="max_price" data-unit="USD" class="range-slider-ui ui-slider" aria-disabled="false"></div>
+                                <div class="clearfix"></div>
+                            </div>
+                <div class="form-group">
+                    <button class="btn btn-block button-theme btn-md">
+                        <i class="fa fa-search"></i> Search
+                    </button>
+                </div>
+            </form>
+        </div>
+        <!-- Search box 3 end -->
+        <a class="carousel-control-prev none-580" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="slider-mover-left" aria-hidden="true">
+                <i class="fa fa-angle-left"></i>
+            </span>
+        </a>
+        <a class="carousel-control-next none-580" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="slider-mover-right" aria-hidden="true">
+                <i class="fa fa-angle-right"></i>
+            </span>
+        </a>
     </div>
 </div>
 <!-- Banner end -->
 
-<!-- Search box 3 start -->
-<div class="search-box-3">
+<!-- Search box 2 end -->
+
+<!-- Featured car start -->
+<div class="featured-car content-area-5">
     <div class="container">
-        <form method="GET">
-            <div class="row">
-                <div class="col-lg-3 col-md-6 col-sm-6 col-6">
-                    <div class="form-group">
-                        <select class="selectpicker search-fields" name="select-brand">
-                            <option>Select Brand</option>
-                            <option>Audi</option>
-                            <option>BMW</option>
-                            <option>Honda</option>
-                            <option>Nissan</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-6 col-6">
-                    <div class="form-group">
-                        <select class="selectpicker search-fields" name="select-make">
-                            <option>Select Make</option>
-                            <option>BMW</option>
-                            <option>Honda</option>
-                            <option>Lamborghini</option>
-                            <option>Sports Car</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-6 col-6">
-                    <div class="form-group">
-                        <select class="selectpicker search-fields" name="select-location">
-                            <option>Select Location</option>
-                            <option>United States</option>
-                            <option>United Kingdom</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-6 col-6">
-                    <div class="form-group">
-                        <select class="selectpicker search-fields" name="select-year">
-                            <option>Select Year</option>
-                            <option>2018</option>
-                            <option>2019</option>
-                            <option>2020</option>
-                            <option>2021</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-6 col-6">
-                    <div class="form-group">
-                        <select class="selectpicker search-fields" name="select-type">
-                            <option>Select Type Of Car</option>
-                            <option>New Car</option>
-                            <option>Used Car</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-6 col-6">
-                    <div class="form-group">
-                        <select class="selectpicker search-fields" name="transmission">
-                            <option>Transmission</option>
-                            <option>Automatic</option>
-                            <option>Manual</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-6 col-6">
-                    <div class="form-group">
-                        <div class="range-slider">
-                            <div data-min="0" data-max="150000" data-unit="USD" data-min-name="min_price" data-max-name="max_price" class="range-slider-ui ui-slider" aria-disabled="false"></div>
-                            <div class="clearfix"></div>
+        <!-- Main title -->
+        <div class="main-title">
+            <h1>Featured <span>Cars</span></h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+        <!-- Slick slider area start -->
+        <div class="slick-slider-area clearfix">
+            <div class="row slick-carousel" data-slick='{"slidesToShow": 3, "responsive":[{"breakpoint": 1024,"settings":{"slidesToShow": 2}}, {"breakpoint": 768,"settings":{"slidesToShow": 1}}]}'>
+              {% for car in featured_cars %}
+                <div class="slick-slide-item">
+                    <div class="car-box-3">
+                        <div class="car-thumbnail">
+                            <a href="{% url 'car_detail' car.id %}" class="car-img">
+                                <div class="tag-2">Featured</div>
+                                <div class="price-box">
+                                    <span>${{car.price | intcomma}}</span>
+                                </div>
+                                <img class="d-block w-100" src="{{car.car_photo.url}}" alt="car" style="min-height: 262px; max-height: 262px;">
+                            </a>
+                            <div class="carbox-overlap-wrapper">
+                                <div class="overlap-box">
+                                    <div class="overlap-btns-area">
+                                        <div class="car-magnify-gallery">
+                                            <a href="{{car.car_photo.url}}" class="overlap-btn">
+                                                <i class="fa fa-expand"></i>
+                                                <img class="hidden" src="{{car.car_photo.url}}">
+                                            </a>
+                                            {% if car.car_photo_1 %}
+                                            <a href="{{car.car_photo_1.url}}" class="hidden">
+                                                <img class="hidden" src="{{car.car_photo_1.url}}">
+                                            </a>
+                                            {% endif %}
+                                            {% if car.car_photo_2 %}
+                                            <a href="{{car.car_photo_2.url}}" class="hidden">
+                                                <img class="hidden" src="{{car.car_photo_2.url}}">
+                                            </a>
+                                            {% endif %}
+                                            {% if car.car_photo_3 %}
+                                            <a href="{{car.car_photo_3.url}}" class="hidden">
+                                                <img class="hidden" src="{{car.car_photo_3.url}}">
+                                            </a>
+                                            {% endif %}
+                                            {% if car.car_photo_4 %}
+                                            <a href="{{car.car_photo_4.url}}" class="hidden">
+                                                <img class="hidden" src="{{car.car_photo_4.url}}">
+                                            </a>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="detail">
+                            <h1 class="title">
+                                <a href="{% url 'car_detail' car.id %}">{{ car.car_title }}</a>
+                            </h1>
+                            <div class="location">
+                                <a href="{% url 'car_detail' car.id %}">
+                                    <i class="flaticon-pin"></i>{{car.state}}, {{car.city}}
+                                </a>
+                            </div>
+                            <ul class="facilities-list clearfix">
+                                <li>{{car.fuel_type}}</li>
+                                <li>{{car.miles | intcomma}} km</li>
+                                <li>{{car.transmission}}</li>
+                                <li>{{car.body_style}}</li>
+                                <li>{{car.color}}</li>
+                                <li>{{car.year}}</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 col-sm-6 col-6">
-                    <div class="form-group">
-                        <button class="btn w-100 button-theme btn-md">
-                            <i class="fa fa-search"></i>Find
-                        </button>
-                    </div>
+            {% endfor %}
+
+            </div>
+            <div class="slick-btn">
+                <div class="slick-prev slick-arrow-buton sab-4">
+                    <i class="fa fa-angle-left"></i>
+                </div>
+                <div class="slick-next slick-arrow-buton sab-3">
+                    <i class="fa fa-angle-right"></i>
                 </div>
             </div>
-        </form>
+        </div>
     </div>
 </div>
-<!-- Search box 3 end -->
+<!-- Featured car end -->
 
-<!-- Featured car start -->
+<!-- Rent car start -->
 <div class="featured-car content-area">
     <div class="container">
         <!-- Main title -->
         <div class="main-title">
-            <h1 class="mb-10">Featured Cars</h1>
-            <div class="title-border">
-                <div class="title-border-inner"></div>
-                <div class="title-border-inner"></div>
-                <div class="title-border-inner"></div>
-                <div class="title-border-inner"></div>
-                <div class="title-border-inner"></div>
-            </div>
+            <h1>Latest <span>Cars</span></h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         </div>
         <div class="row">
-            {% for featured_cars in featured_cars %}
+          {% for car in all_cars %}
             <div class="col-lg-4 col-md-6">
-                <div class="car-box-3">
+                <div class="car-box">
                     <div class="car-thumbnail">
-                        <a href="car-details.html" class="car-img">
-                            <div class="tag-2 bg-active">Featured</div>
-                            <div class="price-box-2"><sup>$</sup>{{featured_cars.price | intcomma}}</div>
-                            <img class="d-block w-100" src="{{featured_cars.car_photo.url}}" style="min-height:262px; max-height:262px;" alt="car">
+                        <a href="{% url 'car_detail' car.id %}" class="car-img">
+                            <div class="tag">For Sale</div>
+                            <img class="d-block w-100" src="{{car.car_photo.url}}" alt="car" style="min-height: 262px; max-height: 262px;">
+                            <div class="facilities-list clearfix">
+                                <ul>
+                                    <li>
+                                        <span><i class="flaticon-way"></i></span>{{car.miles | intcomma}} km
+                                    </li>
+                                    <li>
+                                        <span><i class="flaticon-calendar-1"></i></span>{{car.year}}
+                                    </li>
+                                    <li>
+                                        <span><i class="flaticon-manual-transmission"></i></span>{{car.transmission}}
+                                    </li>
+                                </ul>
+                            </div>
                         </a>
                         <div class="carbox-overlap-wrapper">
                             <div class="overlap-box">
                                 <div class="overlap-btns-area">
-                                    <a class="overlap-btn" data-bs-toggle="modal" data-bs-target="#carOverviewModal">
-                                        <i class="fa fa-eye-slash"></i>
-                                    </a>
-                                    <a class="overlap-btn wishlist-btn">
-                                        <i class="fa fa-heart-o"></i>
-                                    </a>
-                                    <a class="overlap-btn compare-btn">
-                                        <i class="fa fa-balance-scale"></i>
-                                    </a>
                                     <div class="car-magnify-gallery">
-                                        <a href="{{featured_cars.car_photo.url}}" class="overlap-btn" data-sub-html="<h4>Hyundai Santa</h4><p>A beautiful Sunrise this morning taken En-route to Keswick not one as planned but I'm extremely happy....</p>">
+                                        <a href="{{car.car_photo.url}}" class="overlap-btn">
                                             <i class="fa fa-expand"></i>
-                                            <img class="hidden" src="{{featured_cars.car_photo.url}}" alt="hidden-img">
+                                            <img class="hidden" src="{{car.car_photo.url}}">
                                         </a>
-                                        <a href="{{featured_cars.car_photo_1.url}}" class="hidden" data-sub-html="<h4>2020 Ford Mustang</h4><p>A beautiful Sunrise this morning taken En-route to Keswick not one as planned but I'm extremely happy....</p>">
-                                            <img class="hidden" src="{{featured_cars.car_photo_1.url}}" alt="hidden-img">
+                                        {% if car.car_photo_1 %}
+                                        <a href="{{car.car_photo_1.url}}" class="hidden">
+                                            <img class="hidden" src="{{car.car_photo_1.url}}">
                                         </a>
-                                        <a href="{{featured_cars.car_photo_2.url}}" class="hidden" data-sub-html="<h4>Lexus GS F</h4><p>A beautiful Sunrise this morning taken En-route to Keswick not one as planned but I'm extremely happy....</p>">
-                                            <img class="hidden" src="{{featured_cars.car_photo_2.url}}" alt="hidden-img">
+                                        {% endif %}
+                                        {% if car.car_photo_2 %}
+                                        <a href="{{car.car_photo_2.url}}" class="hidden">
+                                            <img class="hidden" src="{{car.car_photo_2.url}}">
                                         </a>
-                                        <a href="{{featured_cars.car_photo_3.url}}" class="hidden" data-sub-html="<h4>Toyota Prius specs</h4><p>A beautiful Sunrise this morning taken En-route to Keswick not one as planned but I'm extremely happy....</p>">
-                                            <img class="hidden" src="{{featured_cars.car_photo_3.url}}" alt="hidden-img">
+                                        {% endif %}
+                                        {% if car.car_photo_3 %}
+                                        <a href="{{car.car_photo_3.url}}" class="hidden">
+                                            <img class="hidden" src="{{car.car_photo_3.url}}">
                                         </a>
-                                        <a href="{{featured_cars.car_photo_4.url}}" class="hidden" data-sub-html="<h4>Toyota Prius</h4><p>A beautiful Sunrise this morning taken En-route to Keswick not one as planned but I'm extremely happy....</p>">
-                                            <img class="hidden" src="{{featured_cars.car_photo_4.url}}" alt="hidden-img">
+                                        {% endif %}
+                                        {% if car.car_photo_4 %}
+                                        <a href="{{car.car_photo_4.url}}" class="hidden">
+                                            <img class="hidden" src="{{car.car_photo_4.url}}">
                                         </a>
+                                        {% endif %}
                                     </div>
                                 </div>
                             </div>
@@ -189,408 +263,80 @@
                     </div>
                     <div class="detail">
                         <h1 class="title">
-                            <a href="car-details.html">{{featured_cars.car_title}}</a>
+                            <a href="{% url 'car_detail' car.id %}">{{car.car_title}}</a>
                         </h1>
                         <div class="location">
-                            <a href="car-details.html">
-                                <i class="flaticon-pin"></i>{{featured_cars.state}}, {{featured_cars.city}}
+                            <a href="{% url 'car_detail' car.id %}">
+                                <i class="flaticon-pin"></i>{{car.state}}, {{car.city}}
                             </a>
                         </div>
-                        <ul class="facilities-list clearfix">
-                            <li>
-                                <i class="flaticon-way"></i>{{featured_cars.miles | intcomma}} km
-                            </li>
-                            <li>
-                                <i class="flaticon-manual-transmission"></i> {{featured_cars.transmission}}
-                            </li>
-                            <li>
-                                <i class="flaticon-calendar-1"></i> {{featured_cars.year}}
-                            </li>
-                            <li>
-                                <i class="flaticon-fuel"></i> {{featured_cars.fuel_type}}
-                            </li>
-                            <li>
-                                <i class="flaticon-car"></i> {{featured_cars.body_style}}
-                            </li>
-                            <li>
-                                <i class="flaticon-gear"></i> {{featured_cars.color}}
-                            </li>
-                        </ul>
                     </div>
-                </div>
-            </div>
-            {% endfor %}
-
-        </div>
-    </div>
-</div>
-<!-- Featured car end -->
-
-<!-- Advantages 2 start -->
-<div class="advantages-2 content-area bg-grea-3">
-    <div class="container">
-        <!-- Main title -->
-        <div class="main-title">
-            <h1 class="mb-10">Our Advantages</h1>
-            <div class="title-border">
-                <div class="title-border-inner"></div>
-                <div class="title-border-inner"></div>
-                <div class="title-border-inner"></div>
-                <div class="title-border-inner"></div>
-                <div class="title-border-inner"></div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-lg-3 col-md-6 col-sm-6">
-                <div class="advantages-box-2 df-box">
-                    <div class="icon">
-                        <i class="flaticon-shield"></i>
-                    </div>
-                    <div class="detail">
-                        <h5>
-                            <a href="services.html">Highly  Secured</a>
-                        </h5>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6">
-                <div class="advantages-box-2 df-box">
-                    <div class="icon">
-                        <i class="flaticon-deal"></i>
-                    </div>
-                    <div class="detail">
-                        <h5>
-                            <a href="services.html">Trusted Agents</a>
-                        </h5>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6">
-                <div class="advantages-box-2 df-box">
-                    <div class="icon">
-                        <i class="flaticon-money"></i>
-                    </div>
-                    <div class="detail">
-                        <h5>
-                            <a href="services.html">Get an Offer</a>
-                        </h5>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6">
-                <div class="advantages-box-2 df-box">
-                    <div class="icon">
-                        <i class="flaticon-support-2"></i>
-                    </div>
-                    <div class="detail">
-                        <h5>
-                            <a href="services.html">Free Support</a>
-                        </h5>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Advantages 2 end -->
-
-<!-- Latest offers Start -->
-<div class="latest-offers categories content-area-13">
-    <div class="container">
-        <!-- Main title -->
-        <div class="main-title text-center">
-            <h1 class="mb-10">Latest Cars</h1>
-            <div class="title-border">
-                <div class="title-border-inner"></div>
-                <div class="title-border-inner"></div>
-                <div class="title-border-inner"></div>
-                <div class="title-border-inner"></div>
-                <div class="title-border-inner"></div>
-            </div>
-        </div>
-        <div class="row row-2">
-            {% for cars in cars %}
-            <div class="col-lg-4 col-md-12">
-                <div class="row">
-                    <div class="col-md-6 col-lg-12 col-pad">
-                        <div class="latest-offers-box">
-                            <div class="photo-overflow">
-                                <div class="car-thumbnail-photo">
-                                    <img class="img-fluid w-100" src="{{cars.car_photo.url}}" style="min-height:262px; max-height:262px;" alt="photo">
-                                </div>
-                            </div>
-                            <div class="new">{{cars.condition}}</div>
-                            <div class="ling-section">
-                                <div class="lo-text clearfix">
-                                    <h3>
-                                        <a href="car-details.html">{{cars.car_title}}</a>
-                                    </h3>
-                                    <h5>${{cars.price | intcomma}}</h5>
-                                </div>
-                            </div>
+                    <div class="footer clearfix">
+                        <div class="pull-left ratings days">
+                            <p class="cartype">{{car.body_style}}</p>
+                        </div>
+                        <div class="pull-right">
+                            <p class="price">$ {{car.price | intcomma}}</p>
                         </div>
                     </div>
-
                 </div>
             </div>
-            {% endfor %}
+          {% endfor %}
 
         </div>
     </div>
 </div>
-<!-- Latest offers end -->
+<!-- Rent car end -->
+
 
 <!-- Our team start -->
 <div class="our-team content-area bg-grea-3">
     <div class="container">
         <!-- Main title -->
         <div class="main-title">
-            <h1 class="mb-10">Our Team</h1>
-            <div class="title-border">
-                <div class="title-border-inner"></div>
-                <div class="title-border-inner"></div>
-                <div class="title-border-inner"></div>
-                <div class="title-border-inner"></div>
-                <div class="title-border-inner"></div>
-            </div>
+            <h1>Executive <span>Team</span></h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
         </div>
-        <div class="row">
-            {% for team in teams %}
-            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
-                <div class="team-3">
-                    <div class="thumb">
-                        <img src="{{team.photo.url}}" alt="agent" class="img-fluid">
-                        <ul>
-                            <li>
-                                <a href="{{team.facebook_link}}" class="facebook-bg"><i class="fa fa-facebook"></i></a>
-                            </li>
-                            <li>
-                                <a href="{{team.twitter_link}}" class="twitter-bg"><i class="fa fa-twitter"></i></a>
-                            </li>
-                            <li>
-                                <a href="{{team.google_plus_link}}" class="google-bg"><i class="fa fa-google"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="info">
-                        <h5><a href="agent.html">{{team.first_name}} {{team.last_name}}</a></h5>
-                        <p>{{team.designation}}</p>
+        <!-- Slick slider area start -->
+        <div class="slick-slider-area clearfix">
+            <div class="row slick-carousel" data-slick='{"slidesToShow": 4, "responsive":[{"breakpoint": 1024,"settings":{"slidesToShow": 2}}, {"breakpoint": 768,"settings":{"slidesToShow": 1}}]}'>
+              {% for team in teams %}
+                <div class="slick-slide-item">
+                    <div class="team-1">
+                        <div class="photo">
+                            <a href="#">
+                                <img src="{{ team.photo.url }}" alt="team-1" class="img-fluid">
+                            </a>
+                            <div class="social-list clearfix">
+                                <a href="{{team.facebook_link}}" target="_blank" class="facebook-bg"><i class="fa fa-facebook"></i></a>
+                                <a href="{{team.twitter_link}}" target="_blank" class="twitter-bg"><i class="fa fa-twitter"></i></a>
+                                <a href="{{team.google_plus_link}}" target="_blank" class="google-bg"><i class="fa fa-google"></i></a>
+                            </div>
+                        </div>
+                        <div class="details">
+                            <h4><a href="#">{{team.first_name}} {{team.last_name}}</a></h4>
+                            <h5>{{team.designation}}</h5>
+                        </div>
                     </div>
                 </div>
+              {% endfor %}
             </div>
-            {% endfor %}
         </div>
     </div>
 </div>
 <!-- Our team end -->
 
-<!-- Testimonial start -->
-<div class="testimonial comon-slick content-area-5">
-    <div class="container">
-        <!-- Main title -->
-        <div class="main-title">
-            <h1 class="mb-10">Our Testimonial</h1>
-            <div class="title-border">
-                <div class="title-border-inner"></div>
-                <div class="title-border-inner"></div>
-                <div class="title-border-inner"></div>
-                <div class="title-border-inner"></div>
-                <div class="title-border-inner"></div>
-            </div>
-        </div>
-        <!-- Slick slider area start -->
-        <div class="slick row comon-slick-inner" data-slick='{"slidesToShow": 2, "responsive":[{"breakpoint": 1024,"settings":{"slidesToShow": 1}}, {"breakpoint": 768,"settings":{"slidesToShow": 1}}]}'>
-            <div class="item slide-box">
-                <div class="testimonials-inner">
-                    <div class="user">
-                        <a href="#">
-                            <img class="media-object" src="img/avatar/avatar-2.jpg" alt="user">
-                        </a>
-                    </div>
-                    <div class="testimonial-info">
-                        <h3>
-                            Creative Director, india
-                        </h3>
-                        <p>Office Manager</p>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text everLorem industry's standard dummy text everLorem.</p>
-                        <div class="rating">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star-half-full"></i>
-                            <span>Reting</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="item slide-box">
-                <div class="testimonials-inner">
-                    <div class="user">
-                        <a href="#">
-                            <img class="media-object" src="img/avatar/avatar-1.jpg" alt="user">
-                        </a>
-                    </div>
-                    <div class="testimonial-info">
-                        <h3>
-                            Pitarshon Roky
-                        </h3>
-                        <p>Web Designer, Uk</p>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text everLorem industry's standard dummy text everLorem.</p>
-                        <div class="rating">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star-half-full"></i>
-                            <span>Reting</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="item slide-box">
-                <div class="testimonials-inner">
-                    <div class="user">
-                        <a href="#">
-                            <img class="media-object" src="img/avatar/avatar-3.jpg" alt="user">
-                        </a>
-                    </div>
-                    <div class="testimonial-info">
-                        <h3>
-                            Maikel Alisa
-                        </h3>
-                        <p>Creative Director</p>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text everLorem industry's standard dummy text everLorem.</p>
-                        <div class="rating">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star-half-full"></i>
-                            <span>Reting</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Testimonial end -->
-
-<!-- Blog start -->
-<div class="blog comon-slick content-area">
-    <div class="container">
-        <!-- Main title -->
-        <div class="main-title">
-            <h1 class="mb-10">Our Blog</h1>
-            <div class="title-border">
-                <div class="title-border-inner"></div>
-                <div class="title-border-inner"></div>
-                <div class="title-border-inner"></div>
-                <div class="title-border-inner"></div>
-                <div class="title-border-inner"></div>
-            </div>
-        </div>
-        <div class="slick row comon-slick-inner" data-slick='{"slidesToShow": 3, "responsive":[{"breakpoint": 1024,"settings":{"slidesToShow": 2}}, {"breakpoint": 768,"settings":{"slidesToShow": 1}}]}'>
-            <div class="item slide-box">
-                <div class="blog-4">
-                    <div class="blog-photo">
-                        <img src="img/blog/blog-2.jpg" alt="blog" class="img-fluid">
-                        <div class="date-box-2">27 Feb</div>
-                        <div class="post-meta clearfix">
-                            <span><a href="#"><i class="flaticon-user-1"></i></a>Admin</span>
-                            <span><a href="#"><i class="flaticon-comment"></i></a>17K</span>
-                            <span><a href="#"><i class="flaticon-calendar"></i></a>73k</span>
-                        </div>
-                    </div>
-                    <div class="detail">
-                        <h3>
-                            <a href="blog-details.html">Are You Ready for the Online Dealership?</a>
-                        </h3>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's</p>
-                    </div>
-                </div>
-            </div>
-            <div class="item slide-box">
-                <div class="blog-4">
-                    <div class="blog-photo">
-                        <img src="img/blog/blog-1.jpg" alt="blog" class="img-fluid">
-                        <div class="date-box-2">14 Aug</div>
-                        <div class="post-meta clearfix">
-                            <span><a href="#"><i class="flaticon-user-1"></i></a>Admin</span>
-                            <span><a href="#"><i class="flaticon-comment"></i></a>17K</span>
-                            <span><a href="#"><i class="flaticon-calendar"></i></a>73k</span>
-                        </div>
-                    </div>
-                    <div class="detail">
-                        <h3>
-                            <a href="blog-details.html">Quality not Quantity for Selling Cars Today</a>
-                        </h3>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's</p>
-                    </div>
-                </div>
-            </div>
-            <div class="item slide-box">
-                <div class="blog-4">
-                    <div class="blog-photo">
-                        <img src="img/blog/blog-2.jpg" alt="blog" class="img-fluid">
-                        <div class="date-box-2">14 Sep</div>
-                        <div class="post-meta clearfix">
-                            <span><a href="#"><i class="flaticon-user-1"></i></a>Admin</span>
-                            <span><a href="#"><i class="flaticon-comment"></i></a>17K</span>
-                            <span><a href="#"><i class="flaticon-calendar"></i></a>73k</span>
-                        </div>
-                    </div>
-                    <div class="detail">
-                        <h3>
-                            <a href="blog-details.html">What's new coming from the automakers in future</a>
-                        </h3>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's</p>
-                    </div>
-                </div>
-            </div>
-            <div class="item slide-box">
-                <div class="blog-4">
-                    <div class="blog-photo">
-                        <img src="img/blog/blog-3.jpg" alt="blog" class="img-fluid">
-                        <div class="date-box-2">14 Nov</div>
-                        <div class="post-meta clearfix">
-                            <span><a href="#"><i class="flaticon-user-1"></i></a>Admin</span>
-                            <span><a href="#"><i class="flaticon-comment"></i></a>17K</span>
-                            <span><a href="#"><i class="flaticon-calendar"></i></a>73k</span>
-                        </div>
-                    </div>
-                    <div class="detail">
-                        <h3>
-                            <a href="blog-details.html">What's new coming from the automakers in future</a>
-                        </h3>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Blog end -->
-
 <!-- Intro section start -->
 <div class="intro-section">
-    <div class="intro-section-inner">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-9 col-md-8 col-sm-12">
-                    <div class="intro-text">
-                        <h3>Do You Have Questions ?</h3>
-                    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9 col-md-8 col-sm-12">
+                <div class="intro-text">
+                    <h3>Do You Have Questions ?</h3>
                 </div>
-                <div class="col-lg-3 col-md-4 col-sm-12">
-                    <a href="{% url 'contact' %}" class="btn btn-md">Get in Touch</a>
-                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-12">
+                <a href="{% url 'contact' %}" class="btn btn-md">Get in Touch</a>
             </div>
         </div>
     </div>
@@ -601,86 +347,6 @@
 
 
 
-<!-- Car Modal 2 -->
-<div class="car-model-2">
-    <div class="modal fade" id="carOverviewModal" tabindex="-1" role="dialog" aria-labelledby="carOverviewModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="carOverviewModalLabel">
-                        Find Your Dream Car
-                    </h5>
-                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="row modal-raw">
-                        <div class="col-lg-6 modal-left">
-                            <div class="modal-left-content">
-                                <div class="bs-example" data-example-id="carousel-with-captions">
-                                    <div class="carousel slide" id="properties-carousel" data-ride="carousel">
-                                        <div class="carousel-inner" role="listbox">
-                                            <div class="item active">
-                                                <iframe src="https://www.youtube.com/embed/V7IrnC9MISU" allowfullscreen=""></iframe>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 modal-right">
-                            <div class="modal-right-content">
-                                <section>
-                                    <h3>Features</h3>
-                                    <div class="features">
-                                        <ul class="bullets">
-                                            <li>Cruise Control</li>
-                                            <li>Airbags</li>
-                                            <li>Air Conditioning</li>
-                                            <li>Alarm System</li>
-                                            <li>Audio Interface</li>
-                                            <li>CDR Audio</li>
-                                            <li>Seat Heating</li>
-                                            <li>ParkAssist</li>
-                                        </ul>
-                                    </div>
-                                </section>
-                                <section>
-                                    <h3>Overview</h3>
-                                    <dl>
-                                        <dt>Model</dt>
-                                        <dd>Audi</dd>
-                                        <dt>Condition</dt>
-                                        <dd>Brand New</dd>
-                                        <dt>Year</dt>
-                                        <dd>2020</dd>
-                                        <dt>Price</dt>
-                                        <dd>$178,000</dd>
-                                    </dl>
-                                </section>
-                                <div class="dd">
-                                    <div class="ratings-2">
-                                        <span class="ratings-box">4.5/5</span>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star-o"></i>
-                                        <span>( 7 Reviews )</span>
-                                    </div>
-                                    <div class="btns">
-                                        <a href="car-details.html" class="btn btn-md btn-round btn-theme">Show Detail</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 
 
 {% endblock %}

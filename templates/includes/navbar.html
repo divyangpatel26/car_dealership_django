@@ -1,90 +1,79 @@
 {% load static %}
- <!-- Main header start -->
-    <header
-      class="main-header sticky-header header-with-top"
-      id="main-header-4"
-    >
-      <nav class="navbar navbar-expand-lg navbar-light">
-        <div class="header-left">
-          <a class="navbar-brand logos" href="{% url 'home' %}">
-            <img src="{% static 'img/logos/black-logo.png' %}" alt="logo" />
-          </a>
-        </div>
-        <button class="navbar-toggler" id="drawer" type="button">
-          <span class="fa fa-bars"></span>
-        </button>
-        <div class="header-centar">
-          <div class="navbar-collapse collapse" id="navbar">
-            <ul class="navbar-nav">
-              <li
-                      {% if '/' == request.path %}
-                    class="nav-item active"
-                    {% else %}
-                    class="nav-item"
-                    {% endif %}
-                      >
-                <a class="nav-link" href="{% url 'home' %}">Home</a>
-              </li>
-                <li
-                      {% if '/cars' == request.path %}
-                    class="nav-item active"
-                    {% else %}
-                    class="nav-item"
-                    {% endif %}
-                      >
-                <a class="nav-link" href="{% url 'cars' %}">Cars</a>
-              </li>
-                <li
-                      {% if '/about' == request.path %}
-                    class="nav-item active"
-                    {% else %}
-                    class="nav-item"
-                    {% endif %}
-                      >
-                <a class="nav-link" href="{% url 'about' %}">About</a>
-              </li>
-              <li
-                      {% if '/services' == request.path %}
-                    class="nav-item active"
-                    {% else %}
-                    class="nav-item"
-                    {% endif %}
-                      >
-                <a class="nav-link" href="{% url 'services' %}">Services</a>
-              </li>
-              <li
-                      {% if '/contact' == request.path %}
-                    class="nav-item active"
-                    {% else %}
-                    class="nav-item"
-                    {% endif %}
-                      >
-                <a class="nav-link" href="{% url 'contact' %}">Contact</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a href="login.html" class="nav-link h-icon">
-                  <i class="flaticon-logout"></i>
-                </a>
-              </li>
-              <li class="nav-item dropdown">
-                <a href="#full-page-search" class="nav-link h-icon">
-                  <i class="fa fa-search"></i>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="header-right">
-          <div class="contact-now">
-            <div class="left">
-              <i class="fa fa-phone"></i>
+<!-- Main header start -->
+<header class="main-header sticky-header header-with-top">
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand company-logo" href="{% url 'home' %}">
+                <img src="">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="fa fa-bars"></span>
+            </button>
+            <div class="navbar-collapse collapse w-100" id="navbar">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a
+                          {% if '/' == request.path %}
+                          class="nav-link active"
+                          {% else %}
+                          class="nav-link"
+                          {% endif %}
+                         href="{% url 'home' %}">
+                            Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a
+                        {% if 'cars' in request.path %}
+                        class="nav-link active"
+                        {% else %}
+                        class="nav-link"
+                        {% endif %}
+                         href="{% url 'cars' %}">
+                            Cars
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a
+                        {% if 'about' in request.path %}
+                        class="nav-link active"
+                        {% else %}
+                        class="nav-link"
+                        {% endif %}
+                         href="{% url 'about' %}">
+                            About
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a
+                        {% if 'services' in request.path %}
+                        class="nav-link active"
+                        {% else %}
+                        class="nav-link"
+                        {% endif %}
+                         href="{% url 'services' %}">
+                            Services
+                        </a>
+                    </li>
+
+
+                    <li class="nav-item dropdown">
+                        <a
+                        {% if 'contact' in request.path %}
+                        class="nav-link active"
+                        {% else %}
+                        class="nav-link"
+                        {% endif %}
+                         href="{% url 'contact' %}">Contact</a>
+                    </li>
+                    <li class="nav-item dropdown m-hide">
+                        <a href="#full-page-search" class="nav-link h-icon">
+                            <i class="fa fa-search"></i>
+                        </a>
+                    </li>
+                </ul>
             </div>
-            <div class="right">
-              <h5>Call Free</h5>
-              <h4><a href="tel:+55-4XX-634-7071">+01-325-2184</a></h4>
-            </div>
-          </div>
-        </div>
-      </nav>
-    </header>
-    <!-- Main header end -->
+        </nav>
+    </div>
+</header>
+<!-- Main header end -->
