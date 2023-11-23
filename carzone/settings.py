@@ -29,14 +29,14 @@ DEBUG = True
 ALLOWED_HOSTS = ['*']
 
 LOGIN_REDIRECT_URL = 'dashboard'
-
+LOGOUT_REDIRECT_URL = 'home'
 
 # Application definition
 
 INSTALLED_APPS = [
     'cars.apps.CarsConfig',
     'pages.apps.PagesConfig',
-    'accounts.apps.AccountsConfig',
+    'accounts',
     'contacts.apps.ContactsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -46,15 +46,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'ckeditor',
     'django.contrib.humanize',
-    'django.contrib.sites',
-    'allauth',
-    'allauth.account',
-    'allauth.socialaccount',
 
-    # Providers
-    'allauth.socialaccount.providers.facebook',
-    'allauth.socialaccount.providers.google',
 ]
+
+AUTH_USER_MODEL = 'accounts.Account'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -152,7 +147,6 @@ MESSAGE_TAGS = {
     messages.ERROR: 'danger',
 }
 
-SITE_ID = 1
 
 
 # Email sending
