@@ -1,14 +1,88 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html' %}
 
-<h1>Seller Dashboard | {{user.first_name}} {{user.last_name}} {{user.email}} {{user.phone_number}} </h1>
+{% block title %} | Dashboard {% endblock %}
+{% block content %}
+
+<!-- Sub banner start -->
+<div class="sub-banner overview-bgi">
+    <div class="container breadcrumb-area">
+        <div class="breadcrumb-areas">
+            <h1>Seller Dashboard</h1>
+            <ul class="breadcrumbs">
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li class="active">{{user.first_name}}</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- Sub Banner end -->
 
 
+<!--   Dashboard Start   -->
 
-</body>
-</html>
+<div class="container mt-50 mb-50">
+    <a href="{% url 'add_car' %}" class="btn btn-primary btn-sm" role="button" aria-disabled="true">Add New Car</a>
+    <a href="{% url 'edit_profile' %}" class="btn btn-secondary btn-sm ml-3" role="button" aria-disabled="true">Edit Profile</a>
+
+    {% if user_cars %}
+    <h2 class="mt-4">Your Listed Cars</h2>
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Car Name</th>
+            <th scope="col">Model</th>
+            <th scope="col">Price</th>
+            <th scope="col">Actions</th> <!-- Added a new column for actions -->
+        </tr>
+        </thead>
+        <tbody>
+        {% for car in user_cars %}
+        <tr>
+
+            <th scope="row">1</th>
+            <td>{{car.car_title}}</td>
+            <td>{{car.model}}</td>
+            <td>{{car.price}}</td>
+            <td>
+                <a href="{% url 'edit_car' car.id %}">
+                    <button type="button" class="btn btn-info btn-sm">Edit</button>
+                </a>
+                <a href="{% url 'delete_car' car.id %}">
+                    <button type="button" class="btn btn-danger btn-sm">Delete</button>
+                </a>
+            </td>
+
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <div class="pagination">
+    <span class="step-links">
+        {% if user_cars.has_previous %}
+            <a href="?page=1">&laquo; first</a>
+            <a href="?page={{ user_cars.previous_page_number }}">previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ user_cars.number }} of {{ user_cars.paginator.num_pages }}.
+        </span>
+
+        {% if user_cars.has_next %}
+            <a href="?page={{ user_cars.next_page_number }}">next</a>
+            <a href="?page={{ user_cars.paginator.num_pages }}">last &raquo;</a>
+        {% endif %}
+    </span>
+    </div>
+    {% else %}
+    <h1 class="mt-4">You don't have any listed car</h1>
+    {% endif %}
+</div>
+
+{% include 'includes/messages.html' %}
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+</form>
+
+{% endblock %}

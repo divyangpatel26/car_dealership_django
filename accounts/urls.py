@@ -1,6 +1,7 @@
 # urls.py
 from django.urls import path
 from . import views
+from .views import edit_profile
 
 urlpatterns = [
     path('register/', views.register, name='register'),
@@ -9,5 +10,5 @@ urlpatterns = [
     path('login/', views.custom_login, name='login'),
     path('dashboard/', views.dashboard, name='dashboard'),
     path('logout/', views.logout_user, name='logout'),
-
+     path('edit_profile/', edit_profile, name='edit_profile'),
 ]

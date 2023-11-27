@@ -1,6 +1,9 @@
-from django.shortcuts import render, get_object_or_404
-from .models import Car
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
+from django.shortcuts import render, get_object_or_404, redirect
+from .models import Car
+from .forms import CarForm
+
+
 
 # Create your views here.
 def cars(request):
@@ -23,18 +26,19 @@ def cars(request):
     }
     return render(request, 'cars/cars.html', data)
 
+
 def car_detail(request, id):
     single_car = get_object_or_404(Car, pk=id)
-
+    seller_phone_number = single_car.seller.phone_number
     data = {
         'single_car': single_car,
+        'seller_phone_number': seller_phone_number,
     }
     return render(request, 'cars/car_detail.html', data)
 
 
 def search(request):
     cars = Car.objects.order_by('-created_date')
-
     model_search = Car.objects.values_list('model', flat=True).distinct()
     city_search = Car.objects.values_list('city', flat=True).distinct()
     year_search = Car.objects.values_list('year', flat=True).distinct()
@@ -81,3 +85,38 @@ def search(request):
         'transmission_search': transmission_search,
     }
     return render(request, 'cars/search.html', data)
+
+
+def add_car(request):
+    if request.method == 'POST':
+        form = CarForm(request.POST, request.FILES)
+        if form.is_valid():
+            car = form.save(commit=False)
+            car.seller = request.user
+            car.save()
+            return redirect('dashboard')  # Change 'seller_dashboard' to the actual URL name for the seller dashboard
+    else:
+        form = CarForm()
+
+    return render(request, 'cars/add_car.html', {'form': form})
+
+
+def edit_car(request, car_id):
+    car = get_object_or_404(Car, id=car_id)
+
+    if request.method == 'POST':
+        form = CarForm(request.POST, request.FILES, instance=car)
+        if form.is_valid():
+            form.save()
+            return redirect(
+                'dashboard')  # Change 'seller_dashboard' to the actual URL name for the seller dashboard
+    else:
+        form = CarForm(instance=car)
+
+    return render(request, 'cars/edit_car.html', {'form': form, 'car': car})
+
+
+def delete_car(request, car_id):
+    car = get_object_or_404(Car, id=car_id)
+    car.delete()
+    return redirect('dashboard')  # Change 'seller_dashboard' to the actual URL name for the seller dashboard

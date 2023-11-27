@@ -11,11 +11,9 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
-import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
@@ -46,7 +44,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'ckeditor',
     'django.contrib.humanize',
-
 ]
 
 AUTH_USER_MODEL = 'accounts.Account'
@@ -82,7 +79,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'carzone.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
@@ -113,7 +109,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 
@@ -126,7 +121,6 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
@@ -143,11 +137,10 @@ MEDIA_URL = '/media/'
 
 # Messages
 from django.contrib.messages import constants as messages
+
 MESSAGE_TAGS = {
     messages.ERROR: 'danger',
 }
-
-
 
 # Email sending
 EMAIL_HOST = 'smtp.gmail.com'
@@ -156,6 +149,11 @@ EMAIL_HOST_USER = '########'
 EMAIL_HOST_PASSWORD = '#######'
 EMAIL_USE_TLS = True
 
-
 # Whitenoise settings
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+# Use the default session engine
+SESSION_ENGINE = 'django.contrib.sessions.backends.db'
+
+# Set the session cookie age to a reasonable value (e.g., 1209600 seconds for 2 weeks)
+SESSION_COOKIE_AGE = 1209600

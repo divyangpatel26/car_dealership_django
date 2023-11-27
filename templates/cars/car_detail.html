@@ -275,7 +275,7 @@
                                     <div class="col">
                                         <label for="name" class="col-form-label">You can reach me by email at</label>
                                       <input type="email" name="email" class="form-control" placeholder="Email Address"
-                                       {% if user.is_authenticated %} value="{{user.email}}"  {% endif %} required>
+                                       {% if user.is_authenticated %} value="{{user.email}}"  {% endif %} readonly>
                                     </div>
                                     <div class="col">
                                         <label for="phone" class="col-form-label">or by phone at</label>
@@ -321,9 +321,17 @@
                     </div>
 
                 </div>
+
             </div>
+            <a class="btn btn-primary btn-xlg" href="tel:+44 {{seller_phone_number}}" style="padding:20px;background-color:rgba(0,0,238,.5);border-radius:30px;">
+   Contact Seller <span class="glyphicon glyphicon-earphone" style="padding-left:10px; padding-right:10px;"></span>+44 {{seller_phone_number}}
+</a>
+
         </div>
+
     </div>
+
 </div>
+
 <!-- Properties details page end -->
 {% endblock %}

@@ -2,7 +2,7 @@ from django.db import models
 from datetime import datetime
 from ckeditor.fields import RichTextField
 from multiselectfield import MultiSelectField
-
+from accounts.models import Account
 # Create your models here.
 class Car(models.Model):
 
@@ -87,7 +87,7 @@ class Car(models.Model):
         ('5', '5'),
         ('6', '6'),
     )
-
+    seller = models.ForeignKey(Account, on_delete=models.CASCADE)
     car_title = models.CharField(max_length=255)
     state = models.CharField(choices=state_choice, max_length=100)
     city = models.CharField(max_length=100)
