@@ -1,8 +1,12 @@
 from django.db import models
 from datetime import datetime
 
+from accounts.models import Account
+
+
 # Create your models here.
 class Contact(models.Model):
+    seller = models.ForeignKey(Account, on_delete=models.CASCADE)
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
     car_id = models.IntegerField()

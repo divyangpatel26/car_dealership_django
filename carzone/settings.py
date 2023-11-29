@@ -152,8 +152,3 @@ EMAIL_USE_TLS = True
 # Whitenoise settings
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-# Use the default session engine
-SESSION_ENGINE = 'django.contrib.sessions.backends.db'
-
-# Set the session cookie age to a reasonable value (e.g., 1209600 seconds for 2 weeks)
-SESSION_COOKIE_AGE = 1209600

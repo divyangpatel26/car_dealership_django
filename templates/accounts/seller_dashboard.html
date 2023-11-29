@@ -23,6 +23,8 @@
 <div class="container mt-50 mb-50">
     <a href="{% url 'add_car' %}" class="btn btn-primary btn-sm" role="button" aria-disabled="true">Add New Car</a>
     <a href="{% url 'edit_profile' %}" class="btn btn-secondary btn-sm ml-3" role="button" aria-disabled="true">Edit Profile</a>
+    <a href="{% url 'inquiries' %}" class="btn btn-success btn-sm ml-3" role="button" aria-disabled="true">Inquiries</a>
+
 
     {% if user_cars %}
     <h2 class="mt-4">Your Listed Cars</h2>

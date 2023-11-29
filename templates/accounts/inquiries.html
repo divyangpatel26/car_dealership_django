@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+{% block title %} | Dashboard {% endblock %}
+{% block content %}
+
+<!-- Sub banner start -->
+<div class="sub-banner overview-bgi">
+    <div class="container breadcrumb-area">
+        <div class="breadcrumb-areas">
+            <h1>Car Inquiries</h1>
+            <ul class="breadcrumbs">
+                <li><a href="{% url 'dashboard' %}">Dashboard</a></li>
+                <li class="active">{{user.first_name}}</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- Sub Banner end -->
+
+
+<!--   Dashboard Start   -->
+
+<div class="container mt-50 mb-50">
+    <a href="{% url 'dashboard' %}" class="btn btn-success btn-sm ml-3" role="button" aria-disabled="true">Dashboard</a>
+    <a href="{% url 'add_car' %}" class="btn btn-primary btn-sm ml-3" role="button" aria-disabled="true">Add New Car</a>
+    <a href="{% url 'edit_profile' %}" class="btn btn-secondary btn-sm ml-3" role="button" aria-disabled="true">Edit Profile</a>
+
+
+
+    {% if inquiries %}
+    <h2 class="mt-4">Your Inquiries For Cars</h2>
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Car Name</th>
+            <th scope="col">Buyer First Name</th>
+            <th scope="col">Buyer Last Name</th>
+            <th scope="col">Buyer Email</th>
+            <th scope="col">Buyer Phone</th>
+            <th scope="col">Action</th>
+            <!-- Added a new column for actions -->
+        </tr>
+        </thead>
+        <tbody>
+        {% for inquiry in inquiries%}
+        <tr>
+
+            <th scope="row">1</th>
+            <td>{{inquiry.car_title}}</td>
+            <td>{{inquiry.first_name}}</td>
+            <td>{{inquiry.last_name}}</td>
+            <td>{{inquiry.email}}</td>
+            <td>{{inquiry.phone}}</td>
+            <td><a href="{% url 'car_detail' inquiry.car_id %}" class="btn btn-outline-dark">View Car</a></td>
+
+
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <h1 class="mt-4">You don't have any Inquiry for car</h1>
+    {% endif %}
+</div>
+
+{% endblock %}
