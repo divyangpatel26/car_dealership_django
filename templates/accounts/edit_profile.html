@@ -23,8 +23,10 @@
 <div class="container mt-50 mb-50">
   {% include 'includes/messages.html' %}
     <a href="{% url 'dashboard' %}" class="btn btn-success btn-sm ml-3" role="button" aria-disabled="true">Dashboard</a>
+    {% if request.user.is_seller%}
     <a href="{% url 'add_car' %}" class="btn btn-primary btn-sm ml-3" role="button" aria-disabled="true">Add New Car</a>
     <a href="{% url 'inquiries' %}" class="btn btn-secondary btn-sm ml-3" role="button" aria-disabled="true">Inquiries</a>
+    {% endif %}
 <h2 class="mt-3">Edit Profile</h2>
   <form method="post" action="{% url 'edit_profile' %}" enctype="multipart/form-data">
     {% csrf_token %}

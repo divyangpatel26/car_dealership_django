@@ -94,7 +94,7 @@ def add_car(request):
             car = form.save(commit=False)
             car.seller = request.user
             car.save()
-            return redirect('dashboard')  # Change 'seller_dashboard' to the actual URL name for the seller dashboard
+            return redirect('dashboard')
     else:
         form = CarForm()
 
@@ -109,7 +109,7 @@ def edit_car(request, car_id):
         if form.is_valid():
             form.save()
             return redirect(
-                'dashboard')  # Change 'seller_dashboard' to the actual URL name for the seller dashboard
+                'dashboard')
     else:
         form = CarForm(instance=car)
 
@@ -119,4 +119,4 @@ def edit_car(request, car_id):
 def delete_car(request, car_id):
     car = get_object_or_404(Car, id=car_id)
     car.delete()
-    return redirect('dashboard')  # Change 'seller_dashboard' to the actual URL name for the seller dashboard
+    return redirect('dashboard')

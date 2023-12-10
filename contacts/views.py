@@ -1,9 +1,10 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from cars.models import Car
 from .models import Contact
 from django.core.mail import send_mail
 from django.contrib.auth.models import User
+
 
 
 # Create your views here.
@@ -31,7 +32,7 @@ def inquiry(request):
         seller = car.seller
         contact = Contact(car_id=car_id, car_title=car_title, user_id=user_id,
                           first_name=first_name, last_name=last_name, customer_need=customer_need, city=city,
-                          state=state, email=email, phone=phone, message=message,seller=seller)
+                          state=state, email=email, phone=phone, message=message, seller=seller)
         contact.save()
         messages.success(request, 'Your request has been submitted, we will get back to you shortly.')
         return redirect('/cars/' + car_id)

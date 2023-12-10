@@ -28,16 +28,16 @@
 
 
     {% if inquiries %}
-    <h2 class="mt-4">Your Inquiries For Cars</h2>
-    <table class="table">
+    <h2 class="mt-4">Buyer's Inquiries For Cars</h2>
+    <table class="table" id="myTable">
         <thead>
         <tr>
-            <th scope="col">#</th>
+            <th scope="col">No</th>
             <th scope="col">Car Name</th>
-            <th scope="col">Buyer First Name</th>
-            <th scope="col">Buyer Last Name</th>
-            <th scope="col">Buyer Email</th>
-            <th scope="col">Buyer Phone</th>
+            <th scope="col">Buyer's First Name</th>
+            <th scope="col">Buyer's Last Name</th>
+            <th scope="col">Buyer's Email</th>
+            <th scope="col">Buyer's Phone</th>
             <th scope="col">Action</th>
             <!-- Added a new column for actions -->
         </tr>
@@ -63,5 +63,14 @@
     <h1 class="mt-4">You don't have any Inquiry for car</h1>
     {% endif %}
 </div>
+<script>
+  // Get the table element
+  var table = document.getElementById("myTable");
 
+  // Iterate through rows (skip the header row)
+  for (var i = 1; i < table.rows.length; i++) {
+    // Update the index in the first column (index 0)
+    table.rows[i].cells[0].innerHTML = i;
+  }
+</script>
 {% endblock %}

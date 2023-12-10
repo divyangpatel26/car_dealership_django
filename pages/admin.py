@@ -1,6 +1,7 @@
 from django.contrib import admin
-from .models import Team
+from .models import Team, Usercontact
 from django.utils.html import format_html
+
 
 # Register your models here.
 
@@ -15,4 +16,10 @@ class TeamAdmin(admin.ModelAdmin):
     search_fields = ('first_name', 'last_name', 'designation')
     list_filter = ('designation',)
 
+
+class UsercontactAdmin(admin.ModelAdmin):
+    list_display = ('full_name', 'email', 'phone_number',)
+
+
 admin.site.register(Team, TeamAdmin)
+admin.site.register(Usercontact,UsercontactAdmin)

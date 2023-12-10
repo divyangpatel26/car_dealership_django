@@ -28,10 +28,10 @@
 
     {% if user_cars %}
     <h2 class="mt-4">Your Listed Cars</h2>
-    <table class="table">
+    <table class="table" id="myTable">
         <thead>
         <tr>
-            <th scope="col">#</th>
+            <th scope="col">No</th>
             <th scope="col">Car Name</th>
             <th scope="col">Model</th>
             <th scope="col">Price</th>
@@ -86,5 +86,14 @@
     {% csrf_token %}
     {{ form.as_p }}
 </form>
+<script>
+  // Get the table element
+  var table = document.getElementById("myTable");
 
+  // Iterate through rows (skip the header row)
+  for (var i = 1; i < table.rows.length; i++) {
+    // Update the index in the first column (index 0)
+    table.rows[i].cells[0].innerHTML = i;
+  }
+</script>
 {% endblock %}
