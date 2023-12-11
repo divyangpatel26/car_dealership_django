@@ -19,7 +19,16 @@ pip install -r requirements.txt
 4.now,we have to type following command to run server.
 python manage.py runserver
 
-If any difficulties to run project email me on: u2405445@uel.ac.uk
+for Admin login use following url:
+https://127.0.0.1:8000/admin
+
+username: admin@gmail.com
+password: admin
+
+You can create superuser using following command:
+python manage.py createsuperuser
+
+if any difficulties to run project email me on: u2405445@uel.ac.uk
 
 Thank you.
 
