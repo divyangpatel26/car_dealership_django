@@ -4,6 +4,7 @@ How to Run Project
 1. Create a Virtual Environment using following command.I strongly recommend to use git bash to run commands, and makesure you have python installed properly in your system.
 git bash download link: https://git-scm.com/downloads.For mac you have to install manually.
 for mac how to create virtual envionment: https://github.com/codingforentrepreneurs/Guides/blob/master/all/install_django_mac_linux.md
+(Don't use my virtual environment to run this project,because it has my system path for python and other required packages.Create new virtual environment)
 
 python -m venv myvenv
 
@@ -23,6 +24,16 @@ for Admin login use following url:
 https://127.0.0.1:8000/admin
 
 username: admin@gmail.com
+password: admin
+
+I have created some sample buyer and sellers accounts:
+email: dhwani@gmail.com
+password: admin
+
+email: anjali@gmail.com
+password: admin
+
+email: mohit@gmail.com
 password: admin
 
 You can create superuser using following command:
