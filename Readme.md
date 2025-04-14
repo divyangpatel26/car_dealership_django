@@ -90,7 +90,7 @@ python manage.py createsuperuser
 
 If you face any difficulties running the project, feel free to reach out:
 
-📧 Email: **u2405445@uel.ac.uk**
+📧 Email: **divyangpatel5358@gmail.com**
 
 ---
 
