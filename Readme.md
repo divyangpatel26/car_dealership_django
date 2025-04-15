@@ -1,4 +1,3 @@
-https://res.cloudinary.com/degc3aacg/image/upload/v1744714499/cardealership_django_wbkcsj.png
 [![MasterHead](https://res.cloudinary.com/degc3aacg/image/upload/v1744714499/cardealership_django_wbkcsj.png)](https://divyangpatel.in/#project)
 # How to Run Project
 
